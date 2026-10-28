@@ -4,13 +4,13 @@ pipeline {
         stage('Check Python') {
             steps {
                 bat 'where python'
-                bat 'python --version'
+                bat '"C:\\Users\\ASUS\\AppData\\Local\\Programs\\Python\\Python310\\python.exe" --version'
                 bat 'python -m pip --version'
             }
         }
         stage('Create Virtual Environment') {
             steps {
-                bat "if exist .venv rmdir /s /q .venv\r\npython -m venv .venv\r\n.venv\\Scripts\\python.exe -m pip install --upgrade pip"
+                bat '"C:\\Users\\ASUS\\AppData\\Local\\Programs\\Python\\Python310\\python.exe" -m venv .virtual_env'
             }
         }
         stage('Install Dependencies') {
